@@ -1,0 +1,71 @@
+--- type npm ---
+npm is a function
+npm () 
+{ 
+    VSCODROID_PLATFORM_FIX=1 node "$PREFIX/lib/node_modules/npm/bin/npm-cli.js" --prefer-offline "$@";
+    local __npm_status=$?;
+    [ $__npm_status -eq 0 ] || __vscodroid_symlink_note;
+    return $__npm_status
+}
+--- declare -f npm ---
+npm () 
+{ 
+    VSCODROID_PLATFORM_FIX=1 node "$PREFIX/lib/node_modules/npm/bin/npm-cli.js" --prefer-offline "$@";
+    local __npm_status=$?;
+    [ $__npm_status -eq 0 ] || __vscodroid_symlink_note;
+    return $__npm_status
+}
+--- usr lib ---
+npm
+--- node_modules full ---
+total 87
+drwx------ 29 u0_a255 u0_a255 3452 2026-09-15 22:09 .
+drwx------  4 u0_a255 u0_a255 3452 2026-09-15 22:25 ..
+drwx------  3 u0_a255 u0_a255 3452 2026-09-15 22:09 @img
+drwx------  4 u0_a255 u0_a255 3452 2026-09-15 22:09 @next
+drwx------ 10 u0_a255 u0_a255 3452 2026-09-15 22:09 @supabase
+drwx------  3 u0_a255 u0_a255 3452 2026-09-15 22:09 @swc
+drwx------  5 u0_a255 u0_a255 3452 2026-09-15 22:09 @types
+drwx------  4 u0_a255 u0_a255 3452 2026-09-15 22:09 caniuse-lite
+drwx------  2 u0_a255 u0_a255 3452 2026-09-15 22:09 client-only
+drwx------  3 u0_a255 u0_a255 3452 2026-09-15 22:09 cookie
+drwx------  2 u0_a255 u0_a255 3452 2026-09-15 22:09 csstype
+drwx------  3 u0_a255 u0_a255 3452 2026-09-15 22:09 detect-libc
+drwx------  3 u0_a255 u0_a255 3452 2026-09-15 22:09 iceberg-js
+drwx------  6 u0_a255 u0_a255 3452 2026-09-15 22:09 nanoid
+drwx------  4 u0_a255 u0_a255 3452 2026-09-15 22:09 next
+drwx------  2 u0_a255 u0_a255 3452 2026-09-15 22:09 picocolors
+drwx------  3 u0_a255 u0_a255 3452 2026-09-15 22:09 postcss
+drwx------  3 u0_a255 u0_a255 3452 2026-09-15 22:09 react
+drwx------  3 u0_a255 u0_a255 3452 2026-09-15 22:09 react-dom
+drwx------  3 u0_a255 u0_a255 3452 2026-09-15 22:09 scheduler
+drwx------  7 u0_a255 u0_a255 3452 2026-09-15 22:09 semver
+drwx------  5 u0_a255 u0_a255 3452 2026-09-15 22:09 sharp
+drwx------  3 u0_a255 u0_a255 3452 2026-09-15 22:09 source-map-js
+drwx------  4 u0_a255 u0_a255 3452 2026-09-15 22:09 stripe
+drwx------  4 u0_a255 u0_a255 3452 2026-09-15 22:09 styled-jsx
+drwx------  3 u0_a255 u0_a255 3452 2026-09-15 22:09 tslib
+drwx------  4 u0_a255 u0_a255 3452 2026-09-15 22:10 typescript
+drwx------  2 u0_a255 u0_a255 3452 2026-09-15 22:09 undici-types
+drwx------  6 u0_a255 u0_a255 3452 2026-09-15 22:10 zod
+--- stripe ---
+total 24
+drwx------  4 u0_a255 u0_a255 3452 2026-09-15 22:09 .
+drwx------ 29 u0_a255 u0_a255 3452 2026-09-15 22:09 ..
+-rw-------  1 u0_a255 u0_a255 1113 2026-09-15 22:09 LICENSE
+-rw-------  1 u0_a255 u0_a255    5 2026-09-15 22:09 OPENAPI_VERSION
+-rw-------  1 u0_a255 u0_a255    7 2026-09-15 22:09 VERSION
+drwx------  6 u0_a255 u0_a255 3452 2026-09-15 22:11 cjs
+drwx------  6 u0_a255 u0_a255 3452 2026-09-15 22:11 esm
+--- supabase ---
+auth-js
+functions-js
+phoenix
+postgrest-js
+realtime-js
+ssr
+storage-js
+supabase-js
+--- lock ---
+ls: node_modules/.package-lock.json: No such file or directory
+ls: package-lock.json: No such file or directory

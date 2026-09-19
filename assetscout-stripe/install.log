@@ -1,0 +1,8 @@
+npm error code ENOENT
+npm error syscall stat
+npm error path /data/user/0/com.vscodroid/cache/npm-cache/_cacache/content-v2/sha512/74/78/841fd622d29240a9ce2ee560360f0dfe23d01c816f75bce9c2e33bc8aedd8f77fa2ec7b18775201c0df2ed138816e99d0519af5601c933f1b25cd2e9c083
+npm error errno ENOENT
+npm error enoent Invalid response body while trying to fetch https://registry.npmjs.org/server-only: ENOENT: no such file or directory, stat '/data/user/0/com.vscodroid/cache/npm-cache/_cacache/content-v2/sha512/74/78/841fd622d29240a9ce2ee560360f0dfe23d01c816f75bce9c2e33bc8aedd8f77fa2ec7b18775201c0df2ed138816e99d0519af5601c933f1b25cd2e9c083'
+npm error enoent This is related to npm not being able to find a file.
+npm error enoent
+npm error A complete log of this run can be found in: /data/user/0/com.vscodroid/cache/npm-cache/_logs/2026-09-16T08_23_53_708Z-debug-0.log

@@ -1,0 +1,20 @@
+
+> assetscout@0.1.0 build
+> node node_modules/next/dist/bin/next build
+
+ ⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of /data/data/com.vscodroid/files/projects/package-lock.json as the root directory.
+ To silence this warning, set `outputFileTracingRoot` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/output#caveats for more information.
+ Detected additional lockfiles: 
+   * /data/data/com.vscodroid/files/projects/assetscout-stripe/package-lock.json
+
+   ▲ Next.js 15.5.7
+
+   Creating an optimized production build ...
+ ⚠ Attempted to load @next/swc-wasm-nodejs, but it was not installed
+ ⚠ Attempted to load @next/swc-wasm-web, but it was not installed
+ ⚠ Attempted to load /data/data/com.vscodroid/files/projects/assetscout-stripe/node_modules/next/next-swc-fallback/@next/swc-android-arm64/next-swc.android-arm64.node, but it was not installed
+ ⚠ Attempted to load @next/swc-android-arm64, but it was not installed
+ ⨯ Failed to load SWC binary for android/arm64, see more info here: https://nextjs.org/docs/messages/failed-loading-swc
+Next.js build worker exited with code: 1 and signal: null

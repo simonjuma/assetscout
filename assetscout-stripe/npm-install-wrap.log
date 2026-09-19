@@ -1,0 +1,2 @@
+sh: npm: inaccessible or not found
+NPM_EXIT=127

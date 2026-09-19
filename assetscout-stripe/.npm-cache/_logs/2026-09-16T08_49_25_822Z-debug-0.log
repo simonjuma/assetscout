@@ -1,0 +1,504 @@
+0 verbose cli /data/app/~~iSQ2SkQxoHKu9R962t6kHQ==/com.vscodroid-yqcDv19qzlWwGu0xgDnd9g==/lib/arm64/libnode.so /data/user/0/com.vscodroid/files/usr/lib/node_modules/npm/bin/npm-cli.js
+1 info using npm@11.16.0
+2 info using node@v24.18.0
+3 silly config load:file:/data/data/com.vscodroid/files/usr/lib/node_modules/npm/npmrc
+4 silly config load:file:/data/data/com.vscodroid/files/projects/assetscout-stripe/.npmrc
+5 silly config load:file:/data/user/0/com.vscodroid/files/home/.npmrc
+6 silly config load:file:/data/user/0/com.vscodroid/files/usr/etc/npmrc
+7 verbose title npm install
+8 verbose argv "--prefer-offline" "install" "--no-audit" "--no-fund" "--cache" "./.npm-cache" "--fetch-retries" "6" "--fetch-retry-maxtimeout" "120000" "--fetch-timeout" "600000"
+9 verbose logfile logs-max:10 dir:/data/data/com.vscodroid/files/projects/assetscout-stripe/.npm-cache/_logs/2026-09-16T08_49_25_822Z-
+10 verbose logfile /data/data/com.vscodroid/files/projects/assetscout-stripe/.npm-cache/_logs/2026-09-16T08_49_25_822Z-debug-0.log
+11 silly logfile done cleaning log files
+12 silly packumentCache heap:1099694080 maxSize:274923520 maxEntrySize:137461760
+13 silly idealTree buildDeps
+14 silly fetch manifest @supabase/ssr@^0.7.0
+15 silly packumentCache full:https://registry.npmjs.org/@supabase%2fssr cache-miss
+16 http fetch GET 200 https://registry.npmjs.org/@supabase%2fssr 175ms (cache stale)
+17 silly packumentCache full:https://registry.npmjs.org/@supabase%2fssr set size:261164 disposed:false
+18 silly fetch manifest @supabase/supabase-js@^2.58.0
+19 silly packumentCache full:https://registry.npmjs.org/@supabase%2fsupabase-js cache-miss
+20 http fetch GET 200 https://registry.npmjs.org/@supabase%2fsupabase-js 125ms (cache stale)
+21 silly packumentCache full:https://registry.npmjs.org/@supabase%2fsupabase-js set size:4019412 disposed:false
+22 silly fetch manifest @opentelemetry/api@>=1.0.0
+23 silly packumentCache full:https://registry.npmjs.org/@opentelemetry%2fapi cache-miss
+24 http fetch GET 200 https://registry.npmjs.org/@opentelemetry%2fapi 78ms (cache stale)
+25 silly packumentCache full:https://registry.npmjs.org/@opentelemetry%2fapi set size:272967 disposed:false
+26 silly fetch manifest next@15.5.7
+27 silly packumentCache full:https://registry.npmjs.org/next cache-miss
+28 http fetch GET 200 https://registry.npmjs.org/next 657ms (cache stale)
+29 silly packumentCache full:https://registry.npmjs.org/next set size:31253946 disposed:false
+30 silly fetch manifest @opentelemetry/api@^1.1.0
+31 silly packumentCache full:https://registry.npmjs.org/@opentelemetry%2fapi cache-hit
+32 silly fetch manifest @playwright/test@^1.51.1
+33 silly packumentCache full:https://registry.npmjs.org/@playwright%2ftest cache-miss
+34 http fetch GET 200 https://registry.npmjs.org/@playwright%2ftest 259ms (cache stale)
+35 silly packumentCache full:https://registry.npmjs.org/@playwright%2ftest set size:9534021 disposed:false
+36 silly fetch manifest babel-plugin-react-compiler@*
+37 silly packumentCache full:https://registry.npmjs.org/babel-plugin-react-compiler cache-miss
+38 http fetch GET 200 https://registry.npmjs.org/babel-plugin-react-compiler 127ms (cache stale)
+39 silly packumentCache full:https://registry.npmjs.org/babel-plugin-react-compiler set size:1356999 disposed:false
+40 silly fetch manifest react@19.1.0
+41 silly packumentCache full:https://registry.npmjs.org/react cache-miss
+42 http fetch GET 200 https://registry.npmjs.org/react 187ms (cache stale)
+43 silly packumentCache full:https://registry.npmjs.org/react set size:6987358 disposed:false
+44 silly fetch manifest react-dom@19.1.0
+45 silly packumentCache full:https://registry.npmjs.org/react-dom cache-miss
+46 http fetch GET 200 https://registry.npmjs.org/react-dom 275ms (cache stale)
+47 silly packumentCache full:https://registry.npmjs.org/react-dom set size:9409337 disposed:false
+48 silly fetch manifest sass@^1.3.0
+49 silly packumentCache full:https://registry.npmjs.org/sass cache-miss
+50 http fetch GET 200 https://registry.npmjs.org/sass 67ms (cache stale)
+51 silly packumentCache full:https://registry.npmjs.org/sass set size:752288 disposed:false
+52 silly fetch manifest server-only@^0.0.1
+53 silly packumentCache full:https://registry.npmjs.org/server-only cache-miss
+54 http fetch GET 200 https://registry.npmjs.org/server-only 36ms (cache stale)
+55 silly packumentCache full:https://registry.npmjs.org/server-only set size:2750 disposed:false
+56 silly fetch manifest stripe@^22.6.2
+57 silly packumentCache full:https://registry.npmjs.org/stripe cache-miss
+58 http fetch GET 200 https://registry.npmjs.org/stripe 83ms (cache stale)
+59 silly packumentCache full:https://registry.npmjs.org/stripe set size:2779103 disposed:false
+60 silly fetch manifest @types/node@^22.10.2
+61 silly packumentCache full:https://registry.npmjs.org/@types%2fnode cache-miss
+62 http fetch GET 200 https://registry.npmjs.org/@types%2fnode 264ms (cache stale)
+63 silly packumentCache full:https://registry.npmjs.org/@types%2fnode set size:11136520 disposed:false
+64 silly fetch manifest zod@^3.25.76
+65 silly packumentCache full:https://registry.npmjs.org/zod cache-miss
+66 http fetch GET 200 https://registry.npmjs.org/zod 168ms (cache stale)
+67 silly packumentCache full:https://registry.npmjs.org/zod set size:4166672 disposed:false
+68 silly fetch manifest @next/swc-wasm-nodejs@15.5.7
+69 silly packumentCache full:https://registry.npmjs.org/@next%2fswc-wasm-nodejs cache-miss
+70 http fetch GET 200 https://registry.npmjs.org/@next%2fswc-wasm-nodejs 126ms (cache stale)
+71 silly packumentCache full:https://registry.npmjs.org/@next%2fswc-wasm-nodejs set size:4817631 disposed:false
+72 silly fetch manifest @types/react@^19.1.0
+73 silly packumentCache full:https://registry.npmjs.org/@types%2freact cache-miss
+74 http fetch GET 200 https://registry.npmjs.org/@types%2freact 99ms (cache stale)
+75 silly packumentCache full:https://registry.npmjs.org/@types%2freact set size:2642161 disposed:false
+76 silly fetch manifest @types/react-dom@^19.1.0
+77 silly packumentCache full:https://registry.npmjs.org/@types%2freact-dom cache-miss
+78 http fetch GET 200 https://registry.npmjs.org/@types%2freact-dom 38ms (cache stale)
+79 silly packumentCache full:https://registry.npmjs.org/@types%2freact-dom set size:444872 disposed:false
+80 silly fetch manifest typescript@^5.9.2
+81 silly packumentCache full:https://registry.npmjs.org/typescript cache-miss
+82 http fetch GET 200 https://registry.npmjs.org/typescript 366ms (cache stale)
+83 silly packumentCache full:https://registry.npmjs.org/typescript set size:15681400 disposed:false
+84 silly placeDep ROOT @next/swc-wasm-nodejs@15.5.7 OK for: assetscout@0.1.0 want: 15.5.7
+85 silly placeDep ROOT @supabase/ssr@0.7.0 OK for: assetscout@0.1.0 want: ^0.7.0
+86 silly placeDep ROOT @supabase/supabase-js@2.116.0 OK for: @supabase/ssr@0.7.0 want: ^2.43.4
+87 silly placeDep ROOT @types/node@22.20.3 OK for: assetscout@0.1.0 want: ^22.10.2
+88 silly placeDep ROOT @types/react@19.3.0 OK for: assetscout@0.1.0 want: ^19.1.0
+89 silly placeDep ROOT @types/react-dom@19.3.0 OK for: assetscout@0.1.0 want: ^19.1.0
+90 silly placeDep ROOT next@15.5.7 OK for: assetscout@0.1.0 want: 15.5.7
+91 silly placeDep ROOT react@19.1.0 OK for: next@15.5.7 want: ^18.2.0 || 19.0.0-rc-de68d2f4-20241204 || ^19.0.0
+92 silly placeDep ROOT react-dom@19.1.0 OK for: next@15.5.7 want: ^18.2.0 || 19.0.0-rc-de68d2f4-20241204 || ^19.0.0
+93 silly placeDep ROOT server-only@0.0.1 OK for: assetscout@0.1.0 want: ^0.0.1
+94 silly placeDep ROOT stripe@22.6.2 OK for: assetscout@0.1.0 want: ^22.6.2
+95 silly placeDep ROOT typescript@5.9.3 OK for: assetscout@0.1.0 want: ^5.9.2
+96 silly placeDep ROOT zod@3.25.76 OK for: assetscout@0.1.0 want: ^3.25.76
+97 silly fetch manifest cookie@^1.0.2
+98 silly packumentCache full:https://registry.npmjs.org/cookie cache-miss
+99 silly fetch manifest @supabase/auth-js@2.116.0
+100 silly packumentCache full:https://registry.npmjs.org/@supabase%2fauth-js cache-miss
+101 silly fetch manifest @supabase/storage-js@2.116.0
+102 silly packumentCache full:https://registry.npmjs.org/@supabase%2fstorage-js cache-miss
+103 silly fetch manifest @supabase/realtime-js@2.116.0
+104 silly packumentCache full:https://registry.npmjs.org/@supabase%2frealtime-js cache-miss
+105 silly fetch manifest @supabase/functions-js@2.116.0
+106 silly packumentCache full:https://registry.npmjs.org/@supabase%2ffunctions-js cache-miss
+107 http fetch GET 200 https://registry.npmjs.org/cookie 98ms (cache stale)
+108 silly packumentCache full:https://registry.npmjs.org/cookie set size:78274 disposed:false
+109 silly fetch manifest @supabase/postgrest-js@2.116.0
+110 silly packumentCache full:https://registry.npmjs.org/@supabase%2fpostgrest-js cache-miss
+111 http fetch GET 200 https://registry.npmjs.org/@supabase%2fauth-js 154ms (cache stale)
+112 silly packumentCache full:https://registry.npmjs.org/@supabase%2fauth-js set size:1648924 disposed:false
+113 silly fetch manifest undici-types@~6.21.0
+114 silly packumentCache full:https://registry.npmjs.org/undici-types cache-miss
+115 http cache https://registry.npmjs.org/@supabase%2fstorage-js 253ms (cache hit)
+116 silly packumentCache full:https://registry.npmjs.org/@supabase%2fstorage-js set size:1646515 disposed:false
+117 silly fetch manifest csstype@^3.2.2
+118 silly packumentCache full:https://registry.npmjs.org/csstype cache-miss
+119 http fetch GET 200 https://registry.npmjs.org/@supabase%2ffunctions-js 347ms (cache stale)
+120 silly packumentCache full:https://registry.npmjs.org/@supabase%2ffunctions-js set size:1368913 disposed:false
+121 silly fetch manifest postcss@8.4.31
+122 silly packumentCache full:https://registry.npmjs.org/postcss cache-miss
+123 http cache https://registry.npmjs.org/@supabase%2frealtime-js 440ms (cache hit)
+124 silly packumentCache full:https://registry.npmjs.org/@supabase%2frealtime-js set size:1895677 disposed:false
+125 silly fetch manifest @next/env@15.5.7
+126 silly packumentCache full:https://registry.npmjs.org/@next%2fenv cache-miss
+127 http fetch GET 200 https://registry.npmjs.org/undici-types 390ms (cache stale)
+128 silly packumentCache full:https://registry.npmjs.org/undici-types set size:258898 disposed:false
+129 silly fetch manifest styled-jsx@5.1.6
+130 silly packumentCache full:https://registry.npmjs.org/styled-jsx cache-miss
+131 http fetch GET 200 https://registry.npmjs.org/csstype 321ms (cache stale)
+132 silly packumentCache full:https://registry.npmjs.org/csstype set size:274189 disposed:false
+133 silly fetch manifest @swc/helpers@0.5.15
+134 silly packumentCache full:https://registry.npmjs.org/@swc%2fhelpers cache-miss
+135 http fetch GET 200 https://registry.npmjs.org/postcss 289ms (cache stale)
+136 silly packumentCache full:https://registry.npmjs.org/postcss set size:766699 disposed:false
+137 silly fetch manifest caniuse-lite@^1.0.30001579
+138 silly packumentCache full:https://registry.npmjs.org/caniuse-lite cache-miss
+139 http fetch GET 200 https://registry.npmjs.org/@supabase%2fpostgrest-js 730ms (cache stale)
+140 silly packumentCache full:https://registry.npmjs.org/@supabase%2fpostgrest-js set size:2100205 disposed:false
+141 silly fetch manifest sharp@^0.34.3
+142 silly packumentCache full:https://registry.npmjs.org/sharp cache-miss
+143 http fetch GET 200 https://registry.npmjs.org/@next%2fenv 476ms (cache stale)
+144 silly packumentCache full:https://registry.npmjs.org/@next%2fenv set size:7682239 disposed:false
+145 silly fetch manifest @next/swc-darwin-x64@15.5.7
+146 silly packumentCache full:https://registry.npmjs.org/@next%2fswc-darwin-x64 cache-miss
+147 http fetch GET 200 https://registry.npmjs.org/styled-jsx 842ms (cache stale)
+148 silly packumentCache full:https://registry.npmjs.org/styled-jsx set size:436113 disposed:false
+149 silly fetch manifest @next/swc-darwin-arm64@15.5.7
+150 silly packumentCache full:https://registry.npmjs.org/@next%2fswc-darwin-arm64 cache-miss
+151 http cache https://registry.npmjs.org/@swc%2fhelpers 857ms (cache hit)
+152 silly packumentCache full:https://registry.npmjs.org/@swc%2fhelpers set size:775458 disposed:false
+153 silly fetch manifest @next/swc-linux-x64-gnu@15.5.7
+154 silly packumentCache full:https://registry.npmjs.org/@next%2fswc-linux-x64-gnu cache-miss
+155 http cache https://registry.npmjs.org/sharp 678ms (cache hit)
+156 silly packumentCache full:https://registry.npmjs.org/sharp set size:1221057 disposed:false
+157 silly fetch manifest @next/swc-linux-x64-musl@15.5.7
+158 silly packumentCache full:https://registry.npmjs.org/@next%2fswc-linux-x64-musl cache-miss
+159 http cache https://registry.npmjs.org/caniuse-lite 926ms (cache hit)
+160 silly packumentCache full:https://registry.npmjs.org/caniuse-lite set size:2313344 disposed:false
+161 silly fetch manifest @next/swc-win32-x64-msvc@15.5.7
+162 silly packumentCache full:https://registry.npmjs.org/@next%2fswc-win32-x64-msvc cache-miss
+163 http cache https://registry.npmjs.org/@next%2fswc-darwin-x64 525ms (cache hit)
+164 silly packumentCache full:https://registry.npmjs.org/@next%2fswc-darwin-x64 set size:5567316 disposed:false
+165 silly fetch manifest @next/swc-linux-arm64-gnu@15.5.7
+166 silly packumentCache full:https://registry.npmjs.org/@next%2fswc-linux-arm64-gnu cache-miss
+167 http cache https://registry.npmjs.org/@next%2fswc-linux-x64-musl 897ms (cache hit)
+168 silly packumentCache full:https://registry.npmjs.org/@next%2fswc-linux-x64-musl set size:5437479 disposed:false
+169 silly fetch manifest @next/swc-linux-arm64-musl@15.5.7
+170 silly packumentCache full:https://registry.npmjs.org/@next%2fswc-linux-arm64-musl cache-miss
+171 http cache https://registry.npmjs.org/@next%2fswc-linux-x64-gnu 1304ms (cache hit)
+172 silly packumentCache full:https://registry.npmjs.org/@next%2fswc-linux-x64-gnu set size:5681871 disposed:false
+173 silly fetch manifest @next/swc-win32-arm64-msvc@15.5.7
+174 silly packumentCache full:https://registry.npmjs.org/@next%2fswc-win32-arm64-msvc cache-miss
+175 http cache https://registry.npmjs.org/@next%2fswc-win32-x64-msvc 1375ms (cache hit)
+176 silly packumentCache full:https://registry.npmjs.org/@next%2fswc-win32-x64-msvc set size:5652333 disposed:false
+177 silly fetch manifest scheduler@^0.26.0
+178 silly packumentCache full:https://registry.npmjs.org/scheduler cache-miss
+179 http cache https://registry.npmjs.org/@next%2fswc-darwin-arm64 1994ms (cache hit)
+180 silly packumentCache full:https://registry.npmjs.org/@next%2fswc-darwin-arm64 set size:5627918 disposed:false
+181 http cache https://registry.npmjs.org/@next%2fswc-linux-arm64-gnu 1659ms (cache hit)
+182 silly packumentCache full:https://registry.npmjs.org/@next%2fswc-linux-arm64-gnu set size:5486943 disposed:false
+183 http cache https://registry.npmjs.org/scheduler 1099ms (cache hit)
+184 silly packumentCache full:https://registry.npmjs.org/scheduler set size:5768339 disposed:false
+185 http cache https://registry.npmjs.org/@next%2fswc-win32-arm64-msvc 1778ms (cache hit)
+186 silly packumentCache full:https://registry.npmjs.org/@next%2fswc-win32-arm64-msvc set size:5467993 disposed:false
+187 http cache https://registry.npmjs.org/@next%2fswc-linux-arm64-musl 2503ms (cache hit)
+188 silly packumentCache full:https://registry.npmjs.org/@next%2fswc-linux-arm64-musl set size:5506620 disposed:false
+189 silly placeDep ROOT cookie@1.1.1 OK for: @supabase/ssr@0.7.0 want: ^1.0.2
+190 silly placeDep ROOT @supabase/auth-js@2.116.0 OK for: @supabase/supabase-js@2.116.0 want: 2.116.0
+191 silly placeDep ROOT @supabase/functions-js@2.116.0 OK for: @supabase/supabase-js@2.116.0 want: 2.116.0
+192 silly placeDep ROOT @supabase/postgrest-js@2.116.0 OK for: @supabase/supabase-js@2.116.0 want: 2.116.0
+193 silly placeDep ROOT @supabase/realtime-js@2.116.0 OK for: @supabase/supabase-js@2.116.0 want: 2.116.0
+194 silly placeDep ROOT @supabase/storage-js@2.116.0 OK for: @supabase/supabase-js@2.116.0 want: 2.116.0
+195 silly fetch manifest tslib@2.8.1
+196 silly packumentCache full:https://registry.npmjs.org/tslib cache-miss
+197 silly fetch manifest tslib@2.8.1
+198 silly packumentCache full:https://registry.npmjs.org/tslib cache-miss
+199 silly fetch manifest tslib@2.8.1
+200 silly packumentCache full:https://registry.npmjs.org/tslib cache-miss
+201 silly fetch manifest tslib@2.8.1
+202 silly packumentCache full:https://registry.npmjs.org/tslib cache-miss
+203 silly fetch manifest @supabase/phoenix@0.4.5
+204 silly packumentCache full:https://registry.npmjs.org/@supabase%2fphoenix cache-miss
+205 http cache https://registry.npmjs.org/tslib 78ms (cache hit)
+206 silly packumentCache full:https://registry.npmjs.org/tslib set size:108843 disposed:false
+207 silly fetch manifest iceberg-js@^0.8.1
+208 silly packumentCache full:https://registry.npmjs.org/iceberg-js cache-miss
+209 http cache https://registry.npmjs.org/tslib 92ms (cache hit)
+210 silly packumentCache full:https://registry.npmjs.org/tslib set size:108843 disposed:false
+211 silly packumentCache full:https://registry.npmjs.org/tslib dispose
+212 http cache https://registry.npmjs.org/tslib 113ms (cache hit)
+213 silly packumentCache full:https://registry.npmjs.org/tslib set size:108843 disposed:true
+214 silly packumentCache full:https://registry.npmjs.org/tslib dispose
+215 http cache https://registry.npmjs.org/tslib 129ms (cache hit)
+216 silly packumentCache full:https://registry.npmjs.org/tslib set size:108843 disposed:true
+217 silly packumentCache full:https://registry.npmjs.org/tslib dispose
+218 http cache https://registry.npmjs.org/@supabase%2fphoenix 124ms (cache hit)
+219 silly packumentCache full:https://registry.npmjs.org/@supabase%2fphoenix set size:32329 disposed:false
+220 http cache https://registry.npmjs.org/iceberg-js 64ms (cache hit)
+221 silly packumentCache full:https://registry.npmjs.org/iceberg-js set size:44071 disposed:false
+222 silly placeDep ROOT tslib@2.8.1 OK for: @supabase/auth-js@2.116.0 want: 2.8.1
+223 silly placeDep ROOT @supabase/phoenix@0.4.5 OK for: @supabase/realtime-js@2.116.0 want: 0.4.5
+224 silly placeDep ROOT iceberg-js@0.8.1 OK for: @supabase/storage-js@2.116.0 want: ^0.8.1
+225 silly placeDep ROOT undici-types@6.21.0 OK for: @types/node@22.20.3 want: ~6.21.0
+226 silly placeDep ROOT csstype@3.2.3 OK for: @types/react@19.3.0 want: ^3.2.2
+227 silly fetch manifest react@^18.2.0 || 19.0.0-rc-de68d2f4-20241204 || ^19.0.0
+228 silly packumentCache full:https://registry.npmjs.org/react cache-miss
+229 http fetch GET 200 https://registry.npmjs.org/react 78ms (cache stale)
+230 silly packumentCache full:https://registry.npmjs.org/react set size:6987358 disposed:false
+231 silly placeDep ROOT @next/env@15.5.7 OK for: next@15.5.7 want: 15.5.7
+232 silly placeDep ROOT @next/swc-darwin-arm64@15.5.7 OK for: next@15.5.7 want: 15.5.7
+233 silly placeDep ROOT @next/swc-darwin-x64@15.5.7 OK for: next@15.5.7 want: 15.5.7
+234 silly placeDep ROOT @next/swc-linux-arm64-gnu@15.5.7 OK for: next@15.5.7 want: 15.5.7
+235 silly placeDep ROOT @next/swc-linux-arm64-musl@15.5.7 OK for: next@15.5.7 want: 15.5.7
+236 silly placeDep ROOT @next/swc-linux-x64-gnu@15.5.7 OK for: next@15.5.7 want: 15.5.7
+237 silly placeDep ROOT @next/swc-linux-x64-musl@15.5.7 OK for: next@15.5.7 want: 15.5.7
+238 silly placeDep ROOT @next/swc-win32-arm64-msvc@15.5.7 OK for: next@15.5.7 want: 15.5.7
+239 silly placeDep ROOT @next/swc-win32-x64-msvc@15.5.7 OK for: next@15.5.7 want: 15.5.7
+240 silly placeDep ROOT @swc/helpers@0.5.15 OK for: next@15.5.7 want: 0.5.15
+241 silly placeDep ROOT caniuse-lite@1.0.30001810 OK for: next@15.5.7 want: ^1.0.30001579
+242 silly placeDep ROOT postcss@8.4.31 OK for: next@15.5.7 want: 8.4.31
+243 silly placeDep ROOT sharp@0.34.5 OK for: next@15.5.7 want: ^0.34.3
+244 silly placeDep ROOT styled-jsx@5.1.6 OK for: next@15.5.7 want: 5.1.6
+245 silly fetch manifest nanoid@^3.3.6
+246 silly packumentCache full:https://registry.npmjs.org/nanoid cache-miss
+247 silly fetch manifest picocolors@^1.0.0
+248 silly packumentCache full:https://registry.npmjs.org/picocolors cache-miss
+249 silly fetch manifest source-map-js@^1.0.2
+250 silly packumentCache full:https://registry.npmjs.org/source-map-js cache-miss
+251 silly fetch manifest semver@^7.7.3
+252 silly packumentCache full:https://registry.npmjs.org/semver cache-miss
+253 silly fetch manifest @img/colour@^1.0.0
+254 silly packumentCache full:https://registry.npmjs.org/@img%2fcolour cache-miss
+255 http cache https://registry.npmjs.org/source-map-js 65ms (cache hit)
+256 silly packumentCache full:https://registry.npmjs.org/source-map-js set size:62640 disposed:false
+257 silly fetch manifest detect-libc@^2.1.2
+258 silly packumentCache full:https://registry.npmjs.org/detect-libc cache-miss
+259 http cache https://registry.npmjs.org/nanoid 100ms (cache hit)
+260 silly packumentCache full:https://registry.npmjs.org/nanoid set size:345858 disposed:false
+261 silly fetch manifest @img/sharp-wasm32@0.34.5
+262 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-wasm32 cache-miss
+263 http cache https://registry.npmjs.org/@img%2fcolour 170ms (cache hit)
+264 silly packumentCache full:https://registry.npmjs.org/@img%2fcolour set size:9701 disposed:false
+265 silly fetch manifest @img/sharp-linux-arm@0.34.5
+266 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-linux-arm cache-miss
+267 http cache https://registry.npmjs.org/semver 188ms (cache hit)
+268 silly packumentCache full:https://registry.npmjs.org/semver set size:246128 disposed:false
+269 silly fetch manifest @img/sharp-linux-x64@0.34.5
+270 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-linux-x64 cache-miss
+271 http cache https://registry.npmjs.org/picocolors 223ms (cache hit)
+272 silly packumentCache full:https://registry.npmjs.org/picocolors set size:16648 disposed:false
+273 silly fetch manifest @img/sharp-win32-x64@0.34.5
+274 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-win32-x64 cache-miss
+275 http cache https://registry.npmjs.org/detect-libc 178ms (cache hit)
+276 silly packumentCache full:https://registry.npmjs.org/detect-libc set size:47861 disposed:false
+277 silly fetch manifest @img/sharp-darwin-x64@0.34.5
+278 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-darwin-x64 cache-miss
+279 http cache https://registry.npmjs.org/@img%2fsharp-win32-x64 51ms (cache hit)
+280 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-win32-x64 set size:107829 disposed:false
+281 silly fetch manifest @img/sharp-win32-ia32@0.34.5
+282 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-win32-ia32 cache-miss
+283 http cache https://registry.npmjs.org/@img%2fsharp-wasm32 121ms (cache hit)
+284 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-wasm32 set size:103630 disposed:false
+285 silly fetch manifest @img/sharp-linux-arm64@0.34.5
+286 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-linux-arm64 cache-miss
+287 http cache https://registry.npmjs.org/@img%2fsharp-linux-arm 125ms (cache hit)
+288 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-linux-arm set size:107173 disposed:false
+289 silly fetch manifest @img/sharp-linux-ppc64@0.34.5
+290 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-linux-ppc64 cache-miss
+291 http cache https://registry.npmjs.org/@img%2fsharp-linux-x64 112ms (cache hit)
+292 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-linux-x64 set size:106660 disposed:false
+293 silly fetch manifest @img/sharp-linux-s390x@0.34.5
+294 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-linux-s390x cache-miss
+295 http cache https://registry.npmjs.org/@img%2fsharp-darwin-x64 98ms (cache hit)
+296 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-darwin-x64 set size:108820 disposed:false
+297 silly fetch manifest @img/sharp-win32-arm64@0.34.5
+298 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-win32-arm64 cache-miss
+299 http cache https://registry.npmjs.org/@img%2fsharp-win32-ia32 107ms (cache hit)
+300 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-win32-ia32 set size:108835 disposed:false
+301 silly fetch manifest @img/sharp-darwin-arm64@0.34.5
+302 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-darwin-arm64 cache-miss
+303 http cache https://registry.npmjs.org/@img%2fsharp-linux-ppc64 89ms (cache hit)
+304 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-linux-ppc64 set size:72651 disposed:false
+305 silly fetch manifest @img/sharp-linux-riscv64@0.34.5
+306 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-linux-riscv64 cache-miss
+307 http cache https://registry.npmjs.org/@img%2fsharp-linux-arm64 118ms (cache hit)
+308 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-linux-arm64 set size:108045 disposed:false
+309 silly fetch manifest @img/sharp-linuxmusl-x64@0.34.5
+310 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-linuxmusl-x64 cache-miss
+311 http cache https://registry.npmjs.org/@img%2fsharp-linux-s390x 100ms (cache hit)
+312 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-linux-s390x set size:105911 disposed:false
+313 silly fetch manifest @img/sharp-linuxmusl-arm64@0.34.5
+314 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-linuxmusl-arm64 cache-miss
+315 http cache https://registry.npmjs.org/@img%2fsharp-linuxmusl-x64 58ms (cache hit)
+316 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-linuxmusl-x64 set size:108319 disposed:false
+317 silly fetch manifest @img/sharp-libvips-linux-arm@1.2.4
+318 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-libvips-linux-arm cache-miss
+319 http cache https://registry.npmjs.org/@img%2fsharp-win32-arm64 129ms (cache hit)
+320 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-win32-arm64 set size:67825 disposed:false
+321 silly fetch manifest @img/sharp-libvips-linux-x64@1.2.4
+322 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-libvips-linux-x64 cache-miss
+323 http cache https://registry.npmjs.org/@img%2fsharp-darwin-arm64 118ms (cache hit)
+324 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-darwin-arm64 set size:110251 disposed:false
+325 silly fetch manifest @img/sharp-libvips-darwin-x64@1.2.4
+326 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-libvips-darwin-x64 cache-miss
+327 http cache https://registry.npmjs.org/@img%2fsharp-linuxmusl-arm64 89ms (cache hit)
+328 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-linuxmusl-arm64 set size:109709 disposed:false
+329 silly fetch manifest @img/sharp-libvips-linux-arm64@1.2.4
+330 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-libvips-linux-arm64 cache-miss
+331 http cache https://registry.npmjs.org/@img%2fsharp-linux-riscv64 136ms (cache hit)
+332 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-linux-riscv64 set size:50215 disposed:false
+333 silly fetch manifest @img/sharp-libvips-linux-ppc64@1.2.4
+334 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-libvips-linux-ppc64 cache-miss
+335 http cache https://registry.npmjs.org/@img%2fsharp-libvips-linux-arm 96ms (cache hit)
+336 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-libvips-linux-arm set size:95067 disposed:false
+337 silly fetch manifest @img/sharp-libvips-linux-s390x@1.2.4
+338 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-libvips-linux-s390x cache-miss
+339 http cache https://registry.npmjs.org/@img%2fsharp-libvips-linux-x64 99ms (cache hit)
+340 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-libvips-linux-x64 set size:90900 disposed:false
+341 silly fetch manifest @img/sharp-libvips-darwin-arm64@1.2.4
+342 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-libvips-darwin-arm64 cache-miss
+343 http cache https://registry.npmjs.org/@img%2fsharp-libvips-darwin-x64 100ms (cache hit)
+344 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-libvips-darwin-x64 set size:87586 disposed:false
+345 silly fetch manifest @img/sharp-libvips-linux-riscv64@1.2.4
+346 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-libvips-linux-riscv64 cache-miss
+347 http cache https://registry.npmjs.org/@img%2fsharp-libvips-linux-ppc64 90ms (cache hit)
+348 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-libvips-linux-ppc64 set size:77213 disposed:false
+349 silly fetch manifest @img/sharp-libvips-linuxmusl-x64@1.2.4
+350 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-libvips-linuxmusl-x64 cache-miss
+351 http cache https://registry.npmjs.org/@img%2fsharp-libvips-linux-arm64 117ms (cache hit)
+352 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-libvips-linux-arm64 set size:92171 disposed:false
+353 silly fetch manifest @img/sharp-libvips-linuxmusl-arm64@1.2.4
+354 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-libvips-linuxmusl-arm64 cache-miss
+355 http cache https://registry.npmjs.org/@img%2fsharp-libvips-darwin-arm64 79ms (cache hit)
+356 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-libvips-darwin-arm64 set size:88531 disposed:false
+357 silly fetch manifest client-only@0.0.1
+358 silly packumentCache full:https://registry.npmjs.org/client-only cache-miss
+359 http cache https://registry.npmjs.org/@img%2fsharp-libvips-linux-riscv64 76ms (cache hit)
+360 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-libvips-linux-riscv64 set size:63460 disposed:false
+361 http cache https://registry.npmjs.org/@img%2fsharp-libvips-linux-s390x 118ms (cache hit)
+362 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-libvips-linux-s390x set size:86174 disposed:false
+363 http cache https://registry.npmjs.org/@img%2fsharp-libvips-linuxmusl-x64 84ms (cache hit)
+364 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-libvips-linuxmusl-x64 set size:88274 disposed:false
+365 http cache https://registry.npmjs.org/@img%2fsharp-libvips-linuxmusl-arm64 83ms (cache hit)
+366 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-libvips-linuxmusl-arm64 set size:91390 disposed:false
+367 http cache https://registry.npmjs.org/client-only 60ms (cache hit)
+368 silly packumentCache full:https://registry.npmjs.org/client-only set size:2750 disposed:false
+369 silly placeDep ROOT nanoid@3.3.19 OK for: postcss@8.4.31 want: ^3.3.6
+370 silly placeDep ROOT picocolors@1.1.1 OK for: postcss@8.4.31 want: ^1.0.0
+371 silly placeDep ROOT source-map-js@1.2.1 OK for: postcss@8.4.31 want: ^1.0.2
+372 silly placeDep ROOT scheduler@0.26.0 OK for: react-dom@19.1.0 want: ^0.26.0
+373 silly placeDep ROOT @img/colour@1.1.0 OK for: sharp@0.34.5 want: ^1.0.0
+374 silly placeDep ROOT @img/sharp-darwin-arm64@0.34.5 OK for: sharp@0.34.5 want: 0.34.5
+375 silly placeDep ROOT @img/sharp-darwin-x64@0.34.5 OK for: sharp@0.34.5 want: 0.34.5
+376 silly placeDep ROOT @img/sharp-libvips-darwin-arm64@1.2.4 OK for: sharp@0.34.5 want: 1.2.4
+377 silly placeDep ROOT @img/sharp-libvips-darwin-x64@1.2.4 OK for: sharp@0.34.5 want: 1.2.4
+378 silly placeDep ROOT @img/sharp-libvips-linux-arm@1.2.4 OK for: sharp@0.34.5 want: 1.2.4
+379 silly placeDep ROOT @img/sharp-libvips-linux-arm64@1.2.4 OK for: sharp@0.34.5 want: 1.2.4
+380 silly placeDep ROOT @img/sharp-libvips-linux-ppc64@1.2.4 OK for: sharp@0.34.5 want: 1.2.4
+381 silly placeDep ROOT @img/sharp-libvips-linux-riscv64@1.2.4 OK for: sharp@0.34.5 want: 1.2.4
+382 silly placeDep ROOT @img/sharp-libvips-linux-s390x@1.2.4 OK for: sharp@0.34.5 want: 1.2.4
+383 silly placeDep ROOT @img/sharp-libvips-linux-x64@1.2.4 OK for: sharp@0.34.5 want: 1.2.4
+384 silly placeDep ROOT @img/sharp-libvips-linuxmusl-arm64@1.2.4 OK for: sharp@0.34.5 want: 1.2.4
+385 silly placeDep ROOT @img/sharp-libvips-linuxmusl-x64@1.2.4 OK for: sharp@0.34.5 want: 1.2.4
+386 silly placeDep ROOT @img/sharp-linux-arm@0.34.5 OK for: sharp@0.34.5 want: 0.34.5
+387 silly placeDep ROOT @img/sharp-linux-arm64@0.34.5 OK for: sharp@0.34.5 want: 0.34.5
+388 silly placeDep ROOT @img/sharp-linux-ppc64@0.34.5 OK for: sharp@0.34.5 want: 0.34.5
+389 silly placeDep ROOT @img/sharp-linux-riscv64@0.34.5 OK for: sharp@0.34.5 want: 0.34.5
+390 silly placeDep ROOT @img/sharp-linux-s390x@0.34.5 OK for: sharp@0.34.5 want: 0.34.5
+391 silly placeDep ROOT @img/sharp-linux-x64@0.34.5 OK for: sharp@0.34.5 want: 0.34.5
+392 silly placeDep ROOT @img/sharp-linuxmusl-arm64@0.34.5 OK for: sharp@0.34.5 want: 0.34.5
+393 silly placeDep ROOT @img/sharp-linuxmusl-x64@0.34.5 OK for: sharp@0.34.5 want: 0.34.5
+394 silly placeDep ROOT @img/sharp-wasm32@0.34.5 OK for: sharp@0.34.5 want: 0.34.5
+395 silly placeDep ROOT @img/sharp-win32-arm64@0.34.5 OK for: sharp@0.34.5 want: 0.34.5
+396 silly placeDep ROOT @img/sharp-win32-ia32@0.34.5 OK for: sharp@0.34.5 want: 0.34.5
+397 silly placeDep ROOT @img/sharp-win32-x64@0.34.5 OK for: sharp@0.34.5 want: 0.34.5
+398 silly placeDep ROOT detect-libc@2.1.2 OK for: sharp@0.34.5 want: ^2.1.2
+399 silly placeDep ROOT semver@7.8.5 OK for: sharp@0.34.5 want: ^7.7.3
+400 silly fetch manifest @emnapi/runtime@^1.7.0
+401 silly packumentCache full:https://registry.npmjs.org/@emnapi%2fruntime cache-miss
+402 http cache https://registry.npmjs.org/@emnapi%2fruntime 31ms (cache hit)
+403 silly packumentCache full:https://registry.npmjs.org/@emnapi%2fruntime set size:127256 disposed:false
+404 silly placeDep ROOT @emnapi/runtime@1.11.3 OK for: @img/sharp-wasm32@0.34.5 want: ^1.7.0
+405 silly placeDep ROOT client-only@0.0.1 OK for: styled-jsx@5.1.6 want: 0.0.1
+406 silly reify moves {}
+407 http cache client-only@https://registry.npmjs.org/client-only/-/client-only-0.0.1.tgz 0ms (cache hit)
+408 http cache detect-libc@https://registry.npmjs.org/detect-libc/-/detect-libc-2.1.2.tgz 1ms (cache hit)
+409 http cache semver@https://registry.npmjs.org/semver/-/semver-7.8.5.tgz 0ms (cache hit)
+410 http cache @img/colour@https://registry.npmjs.org/@img/colour/-/colour-1.1.0.tgz 0ms (cache hit)
+411 http cache source-map-js@https://registry.npmjs.org/source-map-js/-/source-map-js-1.2.1.tgz 0ms (cache hit)
+412 http cache scheduler@https://registry.npmjs.org/scheduler/-/scheduler-0.26.0.tgz 0ms (cache hit)
+413 http cache picocolors@https://registry.npmjs.org/picocolors/-/picocolors-1.1.1.tgz 0ms (cache hit)
+414 http cache nanoid@https://registry.npmjs.org/nanoid/-/nanoid-3.3.19.tgz 0ms (cache hit)
+415 http cache styled-jsx@https://registry.npmjs.org/styled-jsx/-/styled-jsx-5.1.6.tgz 0ms (cache hit)
+416 http cache postcss@https://registry.npmjs.org/postcss/-/postcss-8.4.31.tgz 0ms (cache hit)
+417 http cache caniuse-lite@https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001810.tgz 0ms (cache hit)
+418 http cache @swc/helpers@https://registry.npmjs.org/@swc/helpers/-/helpers-0.5.15.tgz 0ms (cache hit)
+419 http cache @next/env@https://registry.npmjs.org/@next/env/-/env-15.5.7.tgz 0ms (cache hit)
+420 http cache csstype@https://registry.npmjs.org/csstype/-/csstype-3.2.3.tgz 1ms (cache hit)
+421 http cache undici-types@https://registry.npmjs.org/undici-types/-/undici-types-6.21.0.tgz 0ms (cache hit)
+422 http cache iceberg-js@https://registry.npmjs.org/iceberg-js/-/iceberg-js-0.8.1.tgz 0ms (cache hit)
+423 http cache @supabase/phoenix@https://registry.npmjs.org/@supabase/phoenix/-/phoenix-0.4.5.tgz 0ms (cache hit)
+424 http cache tslib@https://registry.npmjs.org/tslib/-/tslib-2.8.1.tgz 0ms (cache hit)
+425 http cache @supabase/postgrest-js@https://registry.npmjs.org/@supabase/postgrest-js/-/postgrest-js-2.116.0.tgz 0ms (cache hit)
+426 http cache @supabase/realtime-js@https://registry.npmjs.org/@supabase/realtime-js/-/realtime-js-2.116.0.tgz 0ms (cache hit)
+427 http cache @supabase/storage-js@https://registry.npmjs.org/@supabase/storage-js/-/storage-js-2.116.0.tgz 1ms (cache hit)
+428 http cache @supabase/functions-js@https://registry.npmjs.org/@supabase/functions-js/-/functions-js-2.116.0.tgz 1ms (cache hit)
+429 http cache @supabase/auth-js@https://registry.npmjs.org/@supabase/auth-js/-/auth-js-2.116.0.tgz 0ms (cache hit)
+430 http cache cookie@https://registry.npmjs.org/cookie/-/cookie-1.1.1.tgz 0ms (cache hit)
+431 http cache zod@https://registry.npmjs.org/zod/-/zod-3.25.76.tgz 0ms (cache hit)
+432 http cache typescript@https://registry.npmjs.org/typescript/-/typescript-5.9.3.tgz 0ms (cache hit)
+433 http cache stripe@https://registry.npmjs.org/stripe/-/stripe-22.6.2.tgz 0ms (cache hit)
+434 http cache server-only@https://registry.npmjs.org/server-only/-/server-only-0.0.1.tgz 0ms (cache hit)
+435 http cache react-dom@https://registry.npmjs.org/react-dom/-/react-dom-19.1.0.tgz 0ms (cache hit)
+436 http cache next@https://registry.npmjs.org/next/-/next-15.5.7.tgz 0ms (cache hit)
+437 http cache @types/react-dom@https://registry.npmjs.org/@types/react-dom/-/react-dom-19.3.0.tgz 0ms (cache hit)
+438 http cache @types/react@https://registry.npmjs.org/@types/react/-/react-19.3.0.tgz 0ms (cache hit)
+439 http cache react@https://registry.npmjs.org/react/-/react-19.1.0.tgz 0ms (cache hit)
+440 http cache @types/node@https://registry.npmjs.org/@types/node/-/node-22.20.3.tgz 0ms (cache hit)
+441 http cache @supabase/supabase-js@https://registry.npmjs.org/@supabase/supabase-js/-/supabase-js-2.116.0.tgz 0ms (cache hit)
+442 http cache @supabase/ssr@https://registry.npmjs.org/@supabase/ssr/-/ssr-0.7.0.tgz 0ms (cache hit)
+443 http cache @next/swc-wasm-nodejs@https://registry.npmjs.org/@next/swc-wasm-nodejs/-/swc-wasm-nodejs-15.5.7.tgz 0ms (cache hit)
+444 http cache sharp@https://registry.npmjs.org/sharp/-/sharp-0.34.5.tgz 0ms (cache hit)
+445 silly tarball no local data for typescript@https://registry.npmjs.org/typescript/-/typescript-5.9.3.tgz. Extracting by manifest.
+446 silly tarball no local data for stripe@https://registry.npmjs.org/stripe/-/stripe-22.6.2.tgz. Extracting by manifest.
+447 silly tarball no local data for next@https://registry.npmjs.org/next/-/next-15.5.7.tgz. Extracting by manifest.
+448 silly tarball no local data for @next/swc-wasm-nodejs@https://registry.npmjs.org/@next/swc-wasm-nodejs/-/swc-wasm-nodejs-15.5.7.tgz. Extracting by manifest.
+449 http fetch GET 200 https://registry.npmjs.org/stripe/-/stripe-22.6.2.tgz 32614ms (cache miss)
+450 http fetch GET 200 https://registry.npmjs.org/@next/swc-wasm-nodejs/-/swc-wasm-nodejs-15.5.7.tgz 178020ms (cache miss)
+451 http fetch GET 200 https://registry.npmjs.org/typescript/-/typescript-5.9.3.tgz 180694ms (cache miss)
+452 http fetch GET 200 https://registry.npmjs.org/next/-/next-15.5.7.tgz 283658ms (cache miss)
+453 warn deprecated next@15.5.7: This version has a security vulnerability. Please upgrade to a patched version. See https://nextjs.org/blog/security-update-2025-12-11 for more details.
+454 info run sharp@0.34.5 install node_modules/sharp node install/check.js || npm run build
+455 info run sharp@0.34.5 install { code: 0, signal: null }
+456 silly ADD node_modules/client-only
+457 silly ADD node_modules/semver
+458 silly ADD node_modules/detect-libc
+459 silly ADD node_modules/@img/colour
+460 silly ADD node_modules/scheduler
+461 silly ADD node_modules/source-map-js
+462 silly ADD node_modules/picocolors
+463 silly ADD node_modules/nanoid
+464 silly ADD node_modules/styled-jsx
+465 silly ADD node_modules/sharp
+466 silly ADD node_modules/postcss
+467 silly ADD node_modules/caniuse-lite
+468 silly ADD node_modules/@swc/helpers
+469 silly ADD node_modules/@next/env
+470 silly ADD node_modules/csstype
+471 silly ADD node_modules/undici-types
+472 silly ADD node_modules/iceberg-js
+473 silly ADD node_modules/@supabase/phoenix
+474 silly ADD node_modules/tslib
+475 silly ADD node_modules/@supabase/storage-js
+476 silly ADD node_modules/@supabase/realtime-js
+477 silly ADD node_modules/@supabase/postgrest-js
+478 silly ADD node_modules/@supabase/functions-js
+479 silly ADD node_modules/@supabase/auth-js
+480 silly ADD node_modules/cookie
+481 silly ADD node_modules/zod
+482 silly ADD node_modules/typescript
+483 silly ADD node_modules/stripe
+484 silly ADD node_modules/server-only
+485 silly ADD node_modules/react-dom
+486 silly ADD node_modules/react
+487 silly ADD node_modules/next
+488 silly ADD node_modules/@types/react-dom
+489 silly ADD node_modules/@types/react
+490 silly ADD node_modules/@types/node
+491 silly ADD node_modules/@supabase/supabase-js
+492 silly ADD node_modules/@supabase/ssr
+493 silly ADD node_modules/@next/swc-wasm-nodejs
+494 warn allow-scripts 1 package has install scripts not yet covered by allowScripts:
+494 warn allow-scripts   sharp@0.34.5 (install: node install/check.js || npm run build)
+494 warn allow-scripts
+494 warn allow-scripts Run `npm approve-scripts --allow-scripts-pending` to review, or `npm approve-scripts <pkg>` to allow.
+495 verbose cwd /data/data/com.vscodroid/files/projects/assetscout-stripe
+496 verbose os Linux 5.15.149-android13-8-00008-gbe074b05e5af-ab12096863
+497 verbose node v24.18.0
+498 verbose npm  v11.16.0
+499 verbose exit 0
+500 info ok

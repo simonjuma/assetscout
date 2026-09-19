@@ -1,0 +1,42 @@
+PATH=/data/data/com.vscodroid/files/server/vscode-reh/bin/remote-cli:/data/app/~~iSQ2SkQxoHKu9R962t6kHQ==/com.vscodroid-yqcDv19qzlWwGu0xgDnd9g==/lib/arm64:/data/user/0/com.vscodroid/files/usr/libexec/tcbin:/data/user/0/com.vscodroid/files/usr/bin:/system/bin
+--- node/npm ---
+/data/user/0/com.vscodroid/files/usr/bin/node
+v24.18.0
+--- interpreters ---
+ls: /usr/bin/env: No such file or directory
+ls: /data/user/0/com.vscodroid/files/usr/bin/env: No such file or directory
+--- global next on PATH? ---
+--- .bin/next ---
+lrwxrwxrwx 1 u0_a255 u0_a255 21 2026-09-16 11:54 node_modules/.bin/next -> ../next/dist/bin/next
+--- head of next cli ---
+#!/usr/bin/env node
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+--- exec .bin/next (shim) ---
+/data/user/0/com.vscodroid/files/projects/diag.sh[21]: ./node_modules/.bin/next: Permission denied
+--- exec sh -c 'next --version' with npm-style PATH ---
+sh: /data/user/0/com.vscodroid/files/projects/assetscout-stripe/node_modules/.bin/next: Permission denied
+--- exec via plain node (workaround form) ---
+Next.js v15.5.7
+--- next type declarations ---
+-rw------- 1 u0_a255 u0_a255  141 2026-09-16 11:54 node_modules/next/headers.d.ts
+-rw------- 1 u0_a255 u0_a255  783 2026-09-16 11:54 node_modules/next/index.d.ts
+-rw------- 1 u0_a255 u0_a255 1216 2026-09-16 11:54 node_modules/next/server.d.ts
+--- swc wasm present? ---
+env
+swc-wasm-nodejs
+--- next-env.d.ts present? ---
+ls: next-env.d.ts: No such file or directory
+--- .next contents ---
+.next
+.next/cache
+.next/cache/.rscinfo
+.next/cache/.previewinfo
+.next/types
+.next/types/routes.d.ts
+.next/types/validator.ts
+.next/package.json
+.next/diagnostics
+.next/diagnostics/framework.json
+.next/diagnostics/build-diagnostics.json
+DONE

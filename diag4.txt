@@ -1,0 +1,33 @@
+=== ALL IMPORTS ===
+=== @next ===
+env
+swc-wasm-nodejs
+node_modules/@next/env:
+README.md
+dist
+package.json
+
+node_modules/@next/swc-wasm-nodejs:
+README.md
+package.json
+wasm.d.ts
+wasm.js
+wasm_bg.wasm
+=== next/dist ===
+api
+bin
+build
+client
+compiled
+esm
+export
+lib
+next-devtools
+pages
+server
+shared
+telemetry
+=== @types ===
+node
+react
+react-dom

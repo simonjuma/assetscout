@@ -1,0 +1,6 @@
+
+> assetscout@0.1.0 typecheck
+> tsc --noEmit
+
+/data/app/~~iSQ2SkQxoHKu9R962t6kHQ==/com.vscodroid-yqcDv19qzlWwGu0xgDnd9g==/lib/arm64/libbash.so: /data/data/com.vscodroid/files/projects/assetscout-stripe/node_modules/.bin/tsc: /usr/bin/env: bad interpreter: Permission denied
+EXIT=126

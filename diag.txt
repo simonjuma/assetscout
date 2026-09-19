@@ -1,0 +1,14 @@
+--- node ---
+/data/user/0/com.vscodroid/files/usr/bin/node
+v24.18.0
+--- npm ---
+npm
+11.16.0
+--- npx ---
+npx
+--- .bin ---
+ls: node_modules/.bin: No such file or directory
+--- tsc.php ---
+tsc
+tsserver
+--- yarn/pnpm ---

@@ -1,0 +1,11 @@
+--- next root ---
+amp.js
+dist
+font
+--- next pkg head ---
+head: node_modules/next/package.json: No such file or directory
+--- server.d.ts? ---
+ls: node_modules/next/server.*: No such file or directory
+ls: node_modules/next/headers.*: No such file or directory
+--- stripe pkg ---
+head: node_modules/stripe/package.json: No such file or directory

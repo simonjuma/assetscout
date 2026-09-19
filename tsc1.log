@@ -1,0 +1,3 @@
+src/lib/billing/errors.ts(13,30): error TS2307: Cannot find module 'next/server' or its corresponding type declarations.
+src/lib/supabase/admin.ts(12,10): error TS2305: Module '"@/env"' has no exported member 'supabaseAdminEnv'.
+src/lib/supabase/server.ts(12,25): error TS2307: Cannot find module 'next/headers' or its corresponding type declarations.

@@ -1,0 +1,7 @@
+=== next@15.5.7 deps ===
+deps: postcss, @next/env, styled-jsx, @swc/helpers, caniuse-lite
+optionalDeps: sharp, @next/swc-darwin-x64, @next/swc-darwin-arm64, @next/swc-linux-x64-gnu, @next/swc-linux-x64-musl, @next/swc-win32-x64-msvc, @next/swc-linux-arm64-gnu, @next/swc-linux-arm64-musl, @next/swc-win32-arm64-msvc
+=== compiled server-only in next? ===
+=== stripe version ===
+22.6.2
+=== next version file ===

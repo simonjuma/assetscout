@@ -1,0 +1,12 @@
+{
+  "name": "assetscout-swr-check",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@next/swc-wasm-nodejs": "^15.5.7",
+    "next": "15.5.7",
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
+  }
+}
