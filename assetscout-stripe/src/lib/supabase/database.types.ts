@@ -1,18 +1,14 @@
 /**
- * Hand-written Supabase types for the billing schema ONLY.
+ * Supabase types for the AssetScout schema.
  *
- * Why hand-written: this is a drop-in set. Your repo may already generate types
- * (`supabase gen types typescript`). If it does, DELETE this file and re-point the
- * two imports in `src/lib/supabase/{server,admin}.ts` at your generated
- * `Database` type - nothing else references it.
+ * Mirrors `supabase/migrations/*.sql` exactly. If a migration renames a column,
+ * rename it here too — that is what makes the compiler catch schema drift.
  *
- * These shapes mirror ASSETSCOUT_STRIPE_SCHEMA.sql exactly. If you rename a
- * column in the migration, rename it here too - that is what makes the compiler
- * catch drift.
- *
- * NOTE: `feature_usage` is ADDITIVE - it is not in the original schema doc.
- * Reason: the contracts doc §8.1 rule 3 requires server-side usage counters for
- * `limit` entitlements, otherwise `*.per_month` limits are decorative.
+ * Hand-written on purpose: this project has no `supabase gen types` step wired
+ * into CI, and a checked-in type contract that TypeScript verifies against the
+ * queries is safer than an ungenerated file. Running
+ * `supabase gen types typescript --project-id <ref>` and replacing this file is
+ * supported — nothing else needs to change.
  */
 
 export type Json = string | number | boolean | null | { [key: string]: Json | undefined } | Json[];
@@ -20,7 +16,9 @@ export type Json = string | number | boolean | null | { [key: string]: Json | un
 /** Postgres `timestamptz` arrives over PostgREST as an ISO-8601 string. */
 export type IsoTimestamp = string;
 
-/** The closed set of Stripe subscription statuses mirrored in `public.subscriptions`. */
+// ---------------------------------------------------------------------------
+// Closed sets (mirror the CHECK constraints)
+// ---------------------------------------------------------------------------
 export type SubscriptionStatus =
   | 'incomplete'
   | 'incomplete_expired'
@@ -38,6 +36,110 @@ export type FeatureValueType = 'boolean' | 'limit';
 export type BillingInterval = 'month' | 'year';
 /** Any ISO-4217 code, uppercased. USD is the default; KES is supported when priced. */
 export type CurrencyCode = string;
+export type PlatformRole = 'member' | 'admin';
+
+export type AssetKind =
+  | 'domain'
+  | 'website'
+  | 'saas'
+  | 'digital_business'
+  | 'digital_product'
+  | 'brand';
+
+export type AssetStatus =
+  | 'active'
+  | 'potentially_inactive'
+  | 'expired'
+  | 'available'
+  | 'for_sale'
+  | 'auction'
+  | 'struck_off'
+  | 'under_investigation'
+  | 'unknown'
+  | 'verification_required'
+  | 'acquired'
+  | 'relaunching'
+  | 'monetizing'
+  | 'sold';
+
+export type RiskLevel = 'low' | 'medium' | 'high' | 'critical' | 'unknown';
+
+export type VerificationStatus =
+  | 'verified'
+  | 'partially_verified'
+  | 'unverified'
+  | 'verification_required';
+
+export type ProvenanceConfidence =
+  | 'authoritative'
+  | 'registry'
+  | 'provider_claim'
+  | 'signal'
+  | 'unknown';
+
+export type DiscoveryMethod = 'provider_query' | 'candidate_check' | 'manual';
+
+export type SourceKind =
+  | 'domain_registry'
+  | 'website'
+  | 'historical_index'
+  | 'signal_feed'
+  | 'business_registry'
+  | 'trademark_registry'
+  | 'manual_registry';
+
+export type SourceRobotsPolicy = 'respect' | 'api_only';
+export type RunMode = 'manual' | 'cron' | 'admin';
+export type IngestionStatus = 'running' | 'succeeded' | 'partial' | 'failed';
+export type IngestionStage =
+  | 'configure'
+  | 'fetch'
+  | 'validate'
+  | 'normalize'
+  | 'dedupe'
+  | 'persist'
+  | 'verify'
+  | 'score';
+
+export type CheckCategory = 'domain' | 'business' | 'trademark' | 'website' | 'ownership' | 'risk';
+export type CheckStatus =
+  | 'verified'
+  | 'failed'
+  | 'inconclusive'
+  | 'not_checked'
+  | 'requires_manual_research';
+export type CheckMethod = 'api' | 'registry_lookup' | 'manual' | 'not_available';
+
+export type ScoreClassification =
+  | 'exceptional'
+  | 'high_potential'
+  | 'good_potential'
+  | 'moderate'
+  | 'low_potential';
+
+export type WatchlistStage =
+  | 'discovered'
+  | 'researching'
+  | 'verification'
+  | 'contacted_owner'
+  | 'negotiating'
+  | 'acquired'
+  | 'relaunching'
+  | 'monetizing'
+  | 'sold'
+  | 'rejected';
+
+// ---------------------------------------------------------------------------
+// Row shapes
+// ---------------------------------------------------------------------------
+type ProfilesRow = {
+  id: string;
+  email: string | null;
+  display_name: string | null;
+  role: PlatformRole;
+  created_at: IsoTimestamp;
+  updated_at: IsoTimestamp;
+};
 
 type PlansRow = {
   id: string;
@@ -55,6 +157,7 @@ type PlansRow = {
 type PlanPricesRow = {
   id: string;
   plan_id: string;
+  /** SERVER ONLY. Never selected by a route that returns to a client. */
   stripe_price_id: string;
   billing_interval: BillingInterval;
   currency: CurrencyCode;
@@ -63,6 +166,9 @@ type PlanPricesRow = {
   created_at: IsoTimestamp;
   updated_at: IsoTimestamp;
 };
+
+/** Client-safe projection (`public.public_plan_prices`). */
+type PublicPlanPricesRow = Omit<PlanPricesRow, 'stripe_price_id' | 'created_at' | 'updated_at'>;
 
 type FeaturesRow = {
   key: string;
@@ -200,9 +306,184 @@ type ConsumeFeatureUsageResult = {
   used: number;
 };
 
+// ---------------------------------------------------------------------------
+// Ingestion / discovery row shapes (migration 0002_assets.sql)
+// ---------------------------------------------------------------------------
+type SourcesRow = {
+  id: string;
+  key: string;
+  name: string;
+  kind: SourceKind;
+  description: string;
+  homepage_url: string;
+  api_doc_url: string | null;
+  terms_url: string | null;
+  license: string | null;
+  terms_note: string | null;
+  requires_auth: boolean;
+  required_env_vars: string[];
+  robots_policy: SourceRobotsPolicy;
+  is_enabled: boolean;
+  min_interval_ms: number;
+  max_requests_per_minute: number;
+  created_at: IsoTimestamp;
+  updated_at: IsoTimestamp;
+};
+
+type IngestionRunsRow = {
+  id: string;
+  source_key: string;
+  mode: RunMode;
+  status: IngestionStatus;
+  query: Json;
+  correlation_id: string;
+  initiated_by: string | null;
+  started_at: IsoTimestamp;
+  finished_at: IsoTimestamp | null;
+  items_fetched: number;
+  items_valid: number;
+  items_new: number;
+  items_updated: number;
+  items_duplicate: number;
+  items_rejected: number;
+  error_count: number;
+  created_at: IsoTimestamp;
+  updated_at: IsoTimestamp;
+};
+
+type IngestionErrorsRow = {
+  id: string;
+  run_id: string;
+  source_key: string;
+  stage: IngestionStage;
+  code: string;
+  message: string;
+  context: Json;
+  created_at: IsoTimestamp;
+};
+
+type AssetsRow = {
+  id: string;
+  kind: AssetKind;
+  dedupe_key: string;
+  name: string;
+  identifier: string;
+  url: string | null;
+  tld: string | null;
+  country: string | null;
+  industry: string | null;
+  niche: string | null;
+  status: AssetStatus;
+  acquisition_route: string | null;
+  estimated_cost_min: number | null;
+  estimated_cost_max: number | null;
+  cost_currency: CurrencyCode | null;
+  risk_level: RiskLevel;
+  verification_status: VerificationStatus;
+  is_published: boolean;
+  monetization: Json;
+  attributes: Json;
+  score_total: number | null;
+  score_classification: ScoreClassification | null;
+  score_evidence_coverage: number | null;
+  score_version: string | null;
+  first_seen_at: IsoTimestamp;
+  last_ingested_at: IsoTimestamp;
+  last_verified_at: IsoTimestamp | null;
+  created_at: IsoTimestamp;
+  updated_at: IsoTimestamp;
+};
+
+type AssetSourcesRow = {
+  id: string;
+  asset_id: string;
+  source_key: string;
+  source_url: string;
+  source_record_id: string | null;
+  discovery_method: DiscoveryMethod;
+  confidence: ProvenanceConfidence;
+  observed_at: IsoTimestamp;
+  last_verified_at: IsoTimestamp | null;
+  verification_status: VerificationStatus;
+  raw_excerpt: Json;
+  created_at: IsoTimestamp;
+  updated_at: IsoTimestamp;
+};
+
+type AssetVerificationsRow = {
+  id: string;
+  asset_id: string;
+  check_key: string;
+  category: CheckCategory;
+  status: CheckStatus;
+  method: CheckMethod;
+  evidence_url: string | null;
+  evidence: Json;
+  source_key: string | null;
+  check_version: string | null;
+  checked_at: IsoTimestamp;
+  created_at: IsoTimestamp;
+  updated_at: IsoTimestamp;
+};
+
+type AssetScoresRow = {
+  id: string;
+  asset_id: string;
+  version: string;
+  total: number;
+  classification: ScoreClassification;
+  brand_potential: number | null;
+  domain_quality: number | null;
+  market_demand: number | null;
+  monetization_potential: number | null;
+  competition: number | null;
+  legal_clarity: number | null;
+  acquisition_cost: number | null;
+  weight_total: number;
+  evidence_coverage: number;
+  factors: Json;
+  computed_at: IsoTimestamp;
+  created_at: IsoTimestamp;
+  updated_at: IsoTimestamp;
+};
+
+type WatchlistItemsRow = {
+  id: string;
+  user_id: string;
+  asset_id: string;
+  notes: string | null;
+  target_price: number | null;
+  target_currency: CurrencyCode;
+  stage: WatchlistStage;
+  reminder_at: IsoTimestamp | null;
+  created_at: IsoTimestamp;
+  updated_at: IsoTimestamp;
+};
+
+type PipelineEventsRow = {
+  id: string;
+  user_id: string;
+  asset_id: string;
+  from_stage: WatchlistStage | null;
+  to_stage: WatchlistStage;
+  note: string | null;
+  created_at: IsoTimestamp;
+};
+
 export type Database = {
   public: {
     Tables: {
+      profiles: {
+        Row: ProfilesRow;
+        Insert: {
+          id: string;
+          email?: string | null;
+          display_name?: string | null;
+          role?: PlatformRole;
+        };
+        Update: Partial<ProfilesRow>;
+        Relationships: [];
+      };
       plans: {
         Row: PlansRow;
         Insert: {
@@ -379,8 +660,185 @@ export type Database = {
         Update: Partial<FeatureUsageRow>;
         Relationships: [];
       };
+      sources: {
+        Row: SourcesRow;
+        Insert: {
+          key: string;
+          name: string;
+          kind: SourceKind;
+          description: string;
+          homepage_url: string;
+          api_doc_url?: string | null;
+          terms_url?: string | null;
+          license?: string | null;
+          terms_note?: string | null;
+          requires_auth?: boolean;
+          required_env_vars?: string[];
+          robots_policy?: SourceRobotsPolicy;
+          is_enabled?: boolean;
+          min_interval_ms?: number;
+          max_requests_per_minute?: number;
+        };
+        Update: Partial<SourcesRow>;
+        Relationships: [];
+      };
+      ingestion_runs: {
+        Row: IngestionRunsRow;
+        Insert: {
+          source_key: string;
+          mode?: RunMode;
+          status?: IngestionStatus;
+          query?: Json;
+          correlation_id: string;
+          initiated_by?: string | null;
+          finished_at?: IsoTimestamp | null;
+          items_fetched?: number;
+          items_valid?: number;
+          items_new?: number;
+          items_updated?: number;
+          items_duplicate?: number;
+          items_rejected?: number;
+          error_count?: number;
+        };
+        Update: Partial<IngestionRunsRow>;
+        Relationships: [];
+      };
+      ingestion_errors: {
+        Row: IngestionErrorsRow;
+        Insert: {
+          run_id: string;
+          source_key: string;
+          stage: IngestionStage;
+          code: string;
+          message: string;
+          context?: Json;
+        };
+        Update: Partial<IngestionErrorsRow>;
+        Relationships: [];
+      };
+      assets: {
+        Row: AssetsRow;
+        Insert: {
+          kind: AssetKind;
+          dedupe_key: string;
+          name: string;
+          identifier: string;
+          url?: string | null;
+          tld?: string | null;
+          country?: string | null;
+          industry?: string | null;
+          niche?: string | null;
+          status?: AssetStatus;
+          acquisition_route?: string | null;
+          estimated_cost_min?: number | null;
+          estimated_cost_max?: number | null;
+          cost_currency?: CurrencyCode | null;
+          risk_level?: RiskLevel;
+          verification_status?: VerificationStatus;
+          is_published?: boolean;
+          monetization?: Json;
+          attributes?: Json;
+          score_total?: number | null;
+          score_classification?: ScoreClassification | null;
+          score_evidence_coverage?: number | null;
+          score_version?: string | null;
+          first_seen_at?: IsoTimestamp;
+          last_ingested_at?: IsoTimestamp;
+          last_verified_at?: IsoTimestamp | null;
+        };
+        Update: Partial<AssetsRow>;
+        Relationships: [];
+      };
+      asset_sources: {
+        Row: AssetSourcesRow;
+        Insert: {
+          asset_id: string;
+          source_key: string;
+          source_url: string;
+          source_record_id?: string | null;
+          discovery_method?: DiscoveryMethod;
+          confidence?: ProvenanceConfidence;
+          observed_at?: IsoTimestamp;
+          last_verified_at?: IsoTimestamp | null;
+          verification_status?: VerificationStatus;
+          raw_excerpt?: Json;
+        };
+        Update: Partial<AssetSourcesRow>;
+        Relationships: [];
+      };
+      asset_verifications: {
+        Row: AssetVerificationsRow;
+        Insert: {
+          asset_id: string;
+          check_key: string;
+          category: CheckCategory;
+          status: CheckStatus;
+          method: CheckMethod;
+          evidence_url?: string | null;
+          evidence?: Json;
+          source_key?: string | null;
+          check_version?: string | null;
+          checked_at?: IsoTimestamp;
+        };
+        Update: Partial<AssetVerificationsRow>;
+        Relationships: [];
+      };
+      asset_scores: {
+        Row: AssetScoresRow;
+        Insert: {
+          asset_id: string;
+          version: string;
+          total: number;
+          classification: ScoreClassification;
+          brand_potential?: number | null;
+          domain_quality?: number | null;
+          market_demand?: number | null;
+          monetization_potential?: number | null;
+          competition?: number | null;
+          legal_clarity?: number | null;
+          acquisition_cost?: number | null;
+          weight_total: number;
+          evidence_coverage: number;
+          factors?: Json;
+          computed_at?: IsoTimestamp;
+        };
+        Update: Partial<AssetScoresRow>;
+        Relationships: [];
+      };
+      watchlist_items: {
+        Row: WatchlistItemsRow;
+        Insert: {
+          user_id: string;
+          asset_id: string;
+          notes?: string | null;
+          target_price?: number | null;
+          target_currency?: CurrencyCode;
+          stage?: WatchlistStage;
+          reminder_at?: IsoTimestamp | null;
+        };
+        Update: Partial<WatchlistItemsRow>;
+        Relationships: [];
+      };
+      pipeline_events: {
+        Row: PipelineEventsRow;
+        Insert: {
+          user_id: string;
+          asset_id: string;
+          from_stage?: WatchlistStage | null;
+          to_stage: WatchlistStage;
+          note?: string | null;
+        };
+        Update: Partial<PipelineEventsRow>;
+        Relationships: [];
+      };
     };
-    Views: Record<string, never>;
+    Views: {
+      /** Column-safe projection of plan_prices; `stripe_price_id` is absent by design. */
+      public_plan_prices: {
+        Row: PublicPlanPricesRow;
+        Relationships: [];
+      };
+    };
     Functions: {
       /**
        * Atomic limit check + increment for one billing period (schema migration

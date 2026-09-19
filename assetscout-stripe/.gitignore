@@ -1,0 +1,34 @@
+# Dependencies / build output
+node_modules/
+.next/
+out/
+build/
+*.tsbuildinfo
+next-env.d.ts
+
+# Environment — never commit real values
+.env
+.env.*
+!.env.example
+
+# Local scratch / logs (the repository contains several debug artifacts from
+# earlier platform debugging; they must not ship in a deployment artifact)
+*.log
+npm-install.out
+npm-install-wrap.log
+diag*.txt
+diag*.sh
+tsc*.log
+trace.txt
+ls-now.txt
+status-env.txt
+.tmp-tscheck/
+
+# Editors / OS
+.DS_Store
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+
+# Vercel
+.vercel
