@@ -11,6 +11,7 @@
 import { resolveKind } from './dedupe.ts';
 import { computeScore, type AssetScore } from './score.ts';
 import { validateNormalizedAsset } from './validate.ts';
+import type { CheckStatus } from '../supabase/database.types.ts';
 import type { EvidenceSignals, NormalizedAsset } from './types.ts';
 
 /** Ordering for asset status. Higher wins when two providers disagree. */
@@ -57,6 +58,17 @@ const CHECK_RANK: Record<string, number> = {
   verified: 4,
 };
 
+/**
+ * Picks the stronger of two results for the same check key.
+ *
+ * Exported so persistence applies the same rule as the in-memory merge: a later
+ * run that could only reach an `inconclusive` answer must never overwrite a
+ * stored `verified` fact.
+ */
+export function strongerCheckStatus(current: CheckStatus, candidate: CheckStatus): CheckStatus {
+  return (CHECK_RANK[candidate] ?? 0) > (CHECK_RANK[current] ?? 0) ? candidate : current;
+}
+
 function pickHigher<T extends string>(current: T, candidate: T, ranks: Record<string, number>): T {
   const currentRank = ranks[current] ?? 0;
   const candidateRank = ranks[candidate] ?? 0;
@@ -64,7 +76,7 @@ function pickHigher<T extends string>(current: T, candidate: T, ranks: Record<st
 }
 
 /** Merges signal counters, preferring an observed value over `null`. */
-function mergeSignals(base: EvidenceSignals, incoming: EvidenceSignals): EvidenceSignals {
+export function mergeEvidenceSignals(base: EvidenceSignals, incoming: EvidenceSignals): EvidenceSignals {
   const statuses = new Set([...base.registryStatuses, ...incoming.registryStatuses]);
   return {
     mentions: incoming.mentions ?? base.mentions,
@@ -81,8 +93,15 @@ function mergeSignals(base: EvidenceSignals, incoming: EvidenceSignals): Evidenc
   };
 }
 
-/** Folds one observation into an accumulated asset for the same identity. */
-function foldAsset(base: NormalizedAsset, incoming: NormalizedAsset): NormalizedAsset {
+/**
+ * Folds one observation into an accumulated asset for the same identity.
+ *
+ * Exported because persistence needs exactly the same policy when it merges an
+ * incoming observation into a row that already exists: if the in-memory merge
+ * and the database merge disagreed, a fact could be upgraded in one and
+ * downgraded in the other depending on which provider ran first.
+ */
+export function mergeAssetFields(base: NormalizedAsset, incoming: NormalizedAsset): NormalizedAsset {
   const provenance = [...base.provenance];
   for (const entry of incoming.provenance) {
     const duplicate = provenance.some(
@@ -139,7 +158,7 @@ function foldAsset(base: NormalizedAsset, incoming: NormalizedAsset): Normalized
     ),
     monetization,
     attributes: { ...base.attributes, ...incoming.attributes },
-    signals: mergeSignals(base.signals, incoming.signals),
+    signals: mergeEvidenceSignals(base.signals, incoming.signals),
     provenance: provenance.slice(0, 20),
     verifications: verifications.slice(0, 20),
   };
@@ -165,7 +184,7 @@ export function mergeNormalizedAssets(assets: readonly NormalizedAsset[]): Merge
   for (const asset of assets) {
     const existing = byKey.get(asset.dedupeKey);
     if (existing) {
-      byKey.set(asset.dedupeKey, foldAsset(existing, asset));
+      byKey.set(asset.dedupeKey, mergeAssetFields(existing, asset));
       duplicates += 1;
     } else {
       byKey.set(asset.dedupeKey, asset);
