@@ -25,7 +25,7 @@ import type { SupabaseClient } from '@supabase/supabase-js';
 import { redactSecrets } from '../errors.ts';
 import type { CheckStatus, Database, Json } from '../supabase/database.types.ts';
 import { kindRank, resolveKind } from './dedupe.ts';
-import { mergeAssetFields, strongerCheckStatus } from './pipeline.ts';
+import { mergeAssetFields, mergeEvidenceSignals, strongerCheckStatus } from './pipeline.ts';
 import type { AssetScore } from './score.ts';
 import { readStoredSignals, withStoredSignals } from './signals.ts';
 import { EMPTY_SIGNALS, type NormalizedAsset, type VerificationInput } from './types.ts';
